@@ -28,7 +28,12 @@ var contacts = [
 /* Noticed that using bracket notation to find a property in the object is better than dot
 notation. Ex = contacts[i][prop] */
 function lookUpProfile(name, prop) {
-    
+    for (var i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName === name) {
+            return contacts[i][prop] || "No such property";
+        }
+    }
+    return "No such contact"
 }
 
 /* Change the values to test your function */
